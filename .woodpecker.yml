@@ -15,4 +15,4 @@ steps:
       - echo "Docker backend is working"
       - echo "Woodpecker Agent is working"
       - echo "CI pipeline completed successfully"
-      - echo "========================================"
+      - echo "==========================================="
