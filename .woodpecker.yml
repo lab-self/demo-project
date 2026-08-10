@@ -1,18 +1,11 @@
+@"
 steps:
-
-  test:
+  - name: test
     image: alpine:3.22
     commands:
-      - echo "========================================"
-      - echo "       WOODPECKER CI TEST"
-      - echo "========================================"
-      - echo "Repository: ${CI_REPO}"
-      - echo "Branch: ${CI_COMMIT_BRANCH}"
-      - echo "Commit: ${CI_COMMIT_SHA}"
-      - echo "Author: ${CI_COMMIT_AUTHOR}"
-      - echo "========================================"
-      - echo "Running CI test..."
-      - echo "Docker backend is working"
-      - echo "Woodpecker Agent is working"
-      - echo "CI pipeline completed successully"
-      - echo "==========================================="
+      - echo "Woodpecker CI is working"
+      - echo "Repository: $CI_REPO"
+      - echo "Branch: $CI_COMMIT_BRANCH"
+      - echo "Commit: $CI_COMMIT_SHA"
+      - uname -a
+"@ | Set-Content -Encoding utf8 .woodpecker.yml
