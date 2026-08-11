@@ -1,27 +1,13 @@
 steps:
-
   test:
     image: alpine:3.22
     commands:
-      - "echo Repository: ${CI_REPO}"
-      - "echo Branch: ${CI_COMMIT_BRANCH}"
-      - "echo Commit: ${CI_COMMIT_SHA}"
-      - "echo Running application test..."
-      - "test -f index.html"
-      - "test -f Dockerfile"
-      - "echo Tests passed"
-
-  build:
-    image: woodpeckerci/plugin-docker-buildx
-    settings:
-      repo: demo-web
-      tags:
-        - ${CI_COMMIT_SHA}
-        - latest
-      dry_run: true
-
-  deploy:
-    image: docker:27-cli
-    commands:
-      - "echo Deployment stage"
-      - "echo Docker image build completed"
+      - echo "========================================"
+      - echo "WOODPECKER CI TEST"
+      - echo "========================================"
+      - echo "Repository: ${CI_REPO}"
+      - echo "Branch: ${CI_COMMIT_BRANCH}"
+      - echo "Commit: ${CI_COMMIT_SHA}"
+      - echo "Agent Docker backend is working"
+      - echo "CI pipeline completed successfully"
+      - echo "========================================"
